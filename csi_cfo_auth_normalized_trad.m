@@ -3,14 +3,10 @@ function   [Pauth_or_an,Pauth_or_sim,Pdet_or_an,Pdet_or_sim,Pauth_and_an,Pauth_a
      Pauth_int_an, Pauth_int_sim, Pdet_int_an,  Pdet_int_sim,mycorr_A,mycorr_E]...
     =csi_cfo_auth_normalized_trad(Ku,thsh_csi,thsh_cfo,f,tau,sampling_rate,Ls,Ns,SNR_AB,SNR_EB,tol_A,tol_B,tol_E,v_AB,intv)
 
-%%%% no combining of metrics here : we use voting, along with the 
 
 
-CSI_max=1;
-CFO_max=1;
-
-thsh_csi=thsh_csi/CSI_max;
-thsh_cfo=thsh_cfo/CFO_max;
+thsh_csi=thsh_csi;
+thsh_cfo=thsh_cfo;
 
 c=3e8;
 rho=besselj(0,2*pi*v_AB*f/c*tau);
